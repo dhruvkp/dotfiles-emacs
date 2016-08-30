@@ -27,6 +27,13 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; install "evil" if not
 (ensure-package-installed 'evil)
+(ensure-package-installed 'auctex)
+
+;; add to PATH
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/texlive/2015basic/bin/x86_64-darwin"))
+(setq exec-path (append exec-path '("/usr/local/texlive/2015basic/bin/x86_64-darwin")))
+
+
 
 (require 'evil)
 (evil-mode 1)
